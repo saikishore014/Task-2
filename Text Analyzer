@@ -1,0 +1,16 @@
+import re
+
+def calculate_word_count(sentence):
+    # Use regex to find words (handling punctuation)
+    words = re.findall(r'\b\w+\b', sentence)
+    return len(words)
+
+# Execute the program
+print("Welcome to the Text Analyzer!")
+user_input = input("Enter a sentence or paragraph: ").strip()
+
+# Validate input
+if user_input:
+    print(f"Total Words: {calculate_word_count(user_input)}")
+else:
+    print("Warning: No text provided. Please try again.")
